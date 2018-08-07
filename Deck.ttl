@@ -1,0 +1,41 @@
+@prefix xrr: <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix swo:  <http://slidewiki.oeg-upm.net/ontology/> .
+@prefix ex:  <http://example.com/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Deck>
+    a rr:TriplesMap;
+    
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.decks.find()""";
+    ];
+    
+    rr:subjectMap [ 
+    	rr:template "http://slidewiki.oeg-upm.net/resource/deck/{_id}";
+		rr:class swo:Deck;
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasActiveCode;
+    	rr:objectMap [ xrr:reference "$.active"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasUser;
+    	rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/user/{$.user}"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasContributor;
+    	rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/user/{$.contributors.*.user}"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:hasDeckRevision;
+        rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/deckrevision/{_id}R{$.revisions.*.id}"; ];
+    ];
+.
+

@@ -1,0 +1,79 @@
+@prefix xrr: <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix swo: <http://slidewiki.oeg-upm.net/ontology/> .
+@prefix swr: <http://slidewiki.oeg-upm.net/resource/> .
+
+<#User>
+    a rr:TriplesMap;
+    
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.users.find()""";
+    ];
+    
+    rr:subjectMap [ 
+    	rr:template "http://slidewiki.oeg-upm.net/resource/user/{_id}";
+		rr:class swo:User;
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasUsername;
+    	rr:objectMap [ xrr:reference "$.username"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasForename;
+    	rr:objectMap [ xrr:reference "$.forename"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasSurname;
+    	rr:objectMap [ xrr:reference "$.surname"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasCountry;
+    	rr:objectMap [ xrr:reference "$.country"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasFrontendLanguage;
+    	rr:objectMap [ xrr:reference "$.frontendLanguage"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasOrganization;
+    	rr:objectMap [ xrr:reference "$.organization"; ];
+    ];
+.
+
+<#UserGroup>
+    a rr:TriplesMap;
+    
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.usergroups.find()""";
+    ];
+
+    rr:subjectMap [ 
+    	rr:template "http://slidewiki/oeg-upm.net/resource/usergroup/{_id}";
+		rr:class swo:UserGroup;
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasName;
+    	rr:objectMap [ xrr:reference "$.name"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasMember;
+    	rr:objectMap [ rr:template "http://slidewiki/oeg-upm.net/resource/user/{$.members.*.userid}"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:hasCreator;
+    	rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/user/{$.creator.userid}"; ];
+    ];
+.
