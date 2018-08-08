@@ -19,32 +19,32 @@
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasUsername;
+    	rr:predicate swo:username;
     	rr:objectMap [ xrr:reference "$.username"; ];
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasForename;
+    	rr:predicate swo:forename;
     	rr:objectMap [ xrr:reference "$.forename"; ];
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasSurname;
+    	rr:predicate swo:surname;
     	rr:objectMap [ xrr:reference "$.surname"; ];
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasCountry;
+    	rr:predicate swo:country;
     	rr:objectMap [ xrr:reference "$.country"; ];
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasFrontendLanguage;
+    	rr:predicate swo:frontendLanguage;
     	rr:objectMap [ xrr:reference "$.frontendLanguage"; ];
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasOrganization;
+    	rr:predicate swo:organization;
     	rr:objectMap [ xrr:reference "$.organization"; ];
     ];
 .
@@ -58,18 +58,18 @@
     ];
 
     rr:subjectMap [ 
-    	rr:template "http://slidewiki/oeg-upm.net/resource/usergroup/{_id}";
+    	rr:template "http://slidewiki.oeg-upm.net/resource/usergroup/{_id}";
 		rr:class swo:UserGroup;
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasName;
+    	rr:predicate swo:name;
     	rr:objectMap [ xrr:reference "$.name"; ];
     ];
 
     rr:predicateObjectMap [
     	rr:predicate swo:hasMember;
-    	rr:objectMap [ rr:template "http://slidewiki/oeg-upm.net/resource/user/{$.members.*.userid}"; ];
+    	rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/user/{$.members.*.userid}"; ];
     ];
 
     rr:predicateObjectMap [
