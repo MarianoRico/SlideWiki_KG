@@ -24,7 +24,7 @@
 
     rr:predicateObjectMap [
     	rr:predicate swo:hasUser;
-    	rr:objectMap [ rr:template "http://slidewiki/oeg-upm.net/resource/user/{$.user}"; ];
+    	rr:objectMap [ rr:template "http://slidewiki.oeg-upm.net/resource/user/{$.user}"; ];
     ];
 
     rr:predicateObjectMap [
