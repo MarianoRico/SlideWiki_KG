@@ -1,6 +1,8 @@
-# Morph mappings that create the RDF from a SlideWiki mongodb
-
+# SlideWiki RDF Knowledge Graph 
 There is a [cool page](https://marianorico.github.io/SlideWiki_KG) with the content of this document.
+
+This RDF KG is built by means of Morph mappings.
+
 
 ## About Morph
 Morph ([Morph-XR2RML](https://github.com/frmichel/morph-xr2rml)) is an implementation of [XR2RML](https://hal.archives-ouvertes.fr/hal-01141686).
@@ -9,7 +11,7 @@ RML is an extension of [R2RML](http://rml.io/) (does not support MongoDB).
 R2RML is a W3C Recommendation.
 
 ## Queries
-Some SPARQL queries that can be run over the SPARQL Endpoint located at http://slidewiki.oeg-upm.net/sparql 
+These are a few examples of SPARQL queries that can be run over the SPARQL Endpoint located at http://slidewiki.oeg-upm.net/sparql 
 
 ### Q1. My decks (IRIs of decks created by a given user (forename))
 Substitute 'Mariano' for any other literal.
