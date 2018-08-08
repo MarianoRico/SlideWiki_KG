@@ -1,12 +1,27 @@
-## Welcome to GitHub Pages
+## He we have the Morph mappings that create the RDF from the SlideWiki mongodb
 
-You can use the [editor on GitHub](https://github.com/MarianoRico/SlideWiki_KG/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+There is a [cool page](https://marianorico.github.io/SlideWiki_KG) describing this process.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### About Morph
+Morph ([Morph-XR2RML](https://github.com/frmichel/morph-xr2rml)) is an implementation of [XR2RML](https://hal.archives-ouvertes.fr/hal-01141686).
+XR2RML is an extension of [RML](http://rml.io) (supports MongoDB). 
+RML is an extension of [R2RML](http://rml.io/) (does not support MongoDB).
+R2RML is a W3C Recommendation.
 
-### Markdown
+### Queries
+Some SPARQL queries that can be run over the SPARQL Endpoint located at http://slidewiki.oeg-upm.net/sparql 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+##
+My decks (IRIs of decks created by user U (forename))
+```markdown
+PREFIX swo: <http://slidewiki.oeg-upm.net/ontology/>
+SELECT ?d WHERE {
+   ?u a swo:User .
+   ?u swo:hasForename ?n . FILTER (regex(?n, 'Mariano')) .
+   ?d a swo:Deck .
+   ?d swo:hasUser ?u
+}
+```
 
 ```markdown
 Syntax highlighted code block
