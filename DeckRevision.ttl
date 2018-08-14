@@ -39,8 +39,38 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate swo:language;
+        rr:objectMap [ xrr:reference "$.language"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:comment;
+        rr:objectMap [ xrr:reference "$.comment"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:abstract;
+        rr:objectMap [ xrr:reference "$.abstract"; ];
+    ];
+ 
+    rr:predicateObjectMap [
+        rr:predicate swo:footer;
+        rr:objectMap [ xrr:reference "$.footer"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:theme;
+        rr:objectMap [ xrr:reference "$.theme"; ];
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate swo:timestamp;
         rr:objectMap [ xrr:reference "$.timestamp"; rr:datatype xsd:dateTime ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:lastUpdate;
+        rr:objectMap [ xrr:reference "$.lastUpdate"; rr:datatype xsd:dateTime ];
     ];
 
     rr:predicateObjectMap [
