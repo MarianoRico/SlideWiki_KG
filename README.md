@@ -24,6 +24,7 @@ SELECT ?d WHERE {
    ?d swo:hasUser ?u
 }
 ```
+Click [here](http://slidewiki.oeg-upm.net/sparql?default-graph-uri=&query=PREFIX+swo%3A+%3Chttp%3A%2F%2Fslidewiki.oeg-upm.net%2Fontology%2F%3E%0D%0ASELECT+%3Fd+WHERE+%7B%0D%0A+++%3Fu+a+swo%3AUser+.%0D%0A+++%3Fu+swo%3Aforename+%3Fn+.+FILTER+%28regex%28%3Fn%2C+%27Mariano%27%29%29+.%0D%0A+++%3Fd+a+swo%3ADeck+.%0D%0A+++%3Fd+swo%3AhasUser+%3Fu%0D%0A%7D%0D%0A%0D%0A&format=text%2Fhtml&timeout=0&debug=on) to execute que query and see the result.
 
 ### Q2. My slides (IRIs of slides created by a given user (forename))
 Substitute 'Mariano' for any other literal.
