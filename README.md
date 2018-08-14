@@ -19,7 +19,7 @@ Substitute 'Mariano' for any other literal.
 PREFIX swo: <http://slidewiki.oeg-upm.net/ontology/>
 SELECT ?d WHERE {
    ?u a swo:User .
-   ?u swo:hasForename ?n . FILTER (regex(?n, 'Mariano')) .
+   ?u swo:forename ?n . FILTER (regex(?n, 'Mariano')) .
    ?d a swo:Deck .
    ?d swo:hasUser ?u
 }
@@ -31,7 +31,7 @@ Substitute 'Mariano' for any other literal.
 PREFIX swo: <http://slidewiki.oeg-upm.net/ontology/>
 SELECT ?s WHERE {
    ?u a swo:User .
-   ?u swo:hasForename ?n . FILTER (regex(?n, 'Mariano')) .
+   ?u swo:forename ?n . FILTER (regex(?n, 'Mariano')) .
    ?s a swo:Slide .
    ?s swo:hasUser ?u
 }
@@ -42,7 +42,7 @@ SELECT ?s WHERE {
 PREFIX swo: <http://slidewiki.oeg-upm.net/ontology/>
 SELECT ?n (COUNT(?d) AS ?count) WHERE {
    ?u a swo:User .
-   ?u swo:hasForename ?n .
+   ?u swo:forename ?n .
    ?d a swo:Deck .
    ?d swo:hasUser ?u
 } GROUP BY ?n ORDER BY DESC(?count)
@@ -53,7 +53,7 @@ SELECT ?n (COUNT(?d) AS ?count) WHERE {
 PREFIX swo: <http://slidewiki.oeg-upm.net/ontology/>
 SELECT ?n (COUNT(?s) AS ?count) WHERE {
    ?u a swo:User .
-   ?u swo:hasForename ?n .
+   ?u swo:forename ?n .
    ?s a swo:Slide .
    ?s swo:hasUser ?u
 } GROUP BY ?n ORDER BY DESC(?count)
