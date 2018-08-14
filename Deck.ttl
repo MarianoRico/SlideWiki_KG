@@ -19,8 +19,32 @@
     ];
 
     rr:predicateObjectMap [
-    	rr:predicate swo:hasActiveCode;
+    	rr:predicate swo:description;
+    	rr:objectMap [ xrr:reference "$.description"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:language;
+    	rr:objectMap [ xrr:reference "$.language"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:license;
+    	rr:objectMap [ xrr:reference "$.license"; ];
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate swo:activeCode;
     	rr:objectMap [ xrr:reference "$.active"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate swo:timestamp;
+        rr:objectMap [ xrr:reference "$.timestamp"; rr:datatype xsd:dateTime];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate swo:lastUpdate;
+        rr:objectMap [ xrr:reference "$.lastUpdate"; rr:datatype xsd:dateTime];
     ];
 
     rr:predicateObjectMap [
