@@ -35,12 +35,12 @@
 
     rr:predicateObjectMap [
         rr:predicate swo:slideRevisionOrder;
-        rr:objectMap [ xrr:reference "$.contentItems.order"; ];
+        rr:objectMap [ xrr:reference "$.contentItems.*.order";  rr:datatype xsd:integer ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate swo:tags;
-        rr:objectMap [ xrr:reference "$.tags.tagName"; ];
+        rr:objectMap [ xrr:reference "$.tags.*.tagName"; ];
     ];
 
     rr:predicateObjectMap [
