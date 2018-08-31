@@ -22,6 +22,10 @@
 		rr:class swo:SlideRevision; 
 	];
 
+     rr:predicateObjectMap [
+        rr:predicate swo:tags;
+        rr:objectMap [ xrr:reference "$.tags.*.tagName"; ];
+    ];
 	
     rr:predicateObjectMap [
         rr:predicate swo:inDeckRevision;
