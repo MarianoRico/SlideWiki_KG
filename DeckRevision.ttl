@@ -39,6 +39,11 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate swo:tags;
+        rr:objectMap [ xrr:reference "$.tags.tagName"; ];
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate swo:title;
         rr:objectMap [ xrr:reference "$.title"; ];
     ];
