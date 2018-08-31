@@ -34,6 +34,11 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate swo:slideRevisionOrder;
+        rr:objectMap [ xrr:reference "$.contentItems.order"; ];
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate swo:title;
         rr:objectMap [ xrr:reference "$.title"; ];
     ];
