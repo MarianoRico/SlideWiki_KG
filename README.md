@@ -3,6 +3,8 @@ There is a [cool page](https://marianorico.github.io/SlideWiki_KG) with the cont
 
 This RDF KG is built by means of Morph mappings.
 
+![ontology](slidewiki_morph.png)
+
 
 ## About Morph
 Morph ([Morph-XR2RML](https://github.com/frmichel/morph-xr2rml)) is an implementation of [XR2RML](https://hal.archives-ouvertes.fr/hal-01141686).
